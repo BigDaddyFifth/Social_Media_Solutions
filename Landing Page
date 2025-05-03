@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -12,9 +16,9 @@
       color: #333;
     }
     header {
-      background: #2b2d42;
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       color: #fff;
-      padding: 40px 20px;
+      padding: 100px 20px;
       text-align: center;
     }
     header h1 {
@@ -39,6 +43,11 @@
       text-decoration: none;
       border-radius: 4px;
       margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #d90429;
+      transform: scale(1.05);
     }
     .features {
       display: flex;
@@ -51,9 +60,20 @@
       padding: 20px;
       border-radius: 8px;
     }
+    .feature i {
+      color: #ef233c;
+      margin-bottom: 10px;
+    }
     .contact {
       background: #edf2f4;
       padding: 40px 20px;
+    }
+    blockquote {
+      font-style: italic;
+      background: #f0f0f0;
+      padding: 20px;
+      border-left: 5px solid #ef233c;
+      margin-top: 40px;
     }
     footer {
       text-align: center;
@@ -74,18 +94,25 @@
     <h2>What We Offer</h2>
     <div class="features">
       <div class="feature">
+        <i class="fas fa-user-cog fa-2x"></i>
         <h3>Account Management</h3>
         <p>We handle posting, engagement, and audience growth across all platforms.</p>
       </div>
       <div class="feature">
+        <i class="fas fa-pen-nib fa-2x"></i>
         <h3>Content Creation</h3>
         <p>Custom content tailored to your brand—images, captions, hashtags, and more.</p>
       </div>
       <div class="feature">
+        <i class="fas fa-chart-line fa-2x"></i>
         <h3>Analytics & Strategy</h3>
         <p>We track performance and optimize your presence with data-driven strategies.</p>
       </div>
     </div>
+
+    <blockquote>
+      “Social Media Solutions transformed our online presence—our engagement has never been better!” – Happy Client
+    </blockquote>
   </section>
 
   <section class="contact" id="contact">
