@@ -11,38 +11,80 @@
     }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       color: #333;
+      background: #fafafa;
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: none;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #2b2d42;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: opacity 0.3s ease;
+    }
+    nav a:hover {
+      opacity: 0.7;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
       color: #fff;
-      padding: 100px 20px;
+      padding: 140px 20px 100px;
       text-align: center;
     }
     header h1 {
       margin-bottom: 10px;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     header p {
-      font-size: 1.2rem;
-      max-width: 600px;
+      font-size: 1.3rem;
+      max-width: 700px;
       margin: 0 auto;
     }
     .section {
-      padding: 60px 20px;
-      max-width: 900px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2rem;
+      color: #2b2d42;
+      margin-bottom: 30px;
+      text-align: center;
     }
     .cta-button {
       display: inline-block;
       background: #ef233c;
       color: #fff;
-      padding: 12px 24px;
+      padding: 14px 28px;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 8px;
       margin-top: 20px;
+      font-weight: bold;
       transition: all 0.3s ease;
     }
     .cta-button:hover {
@@ -52,21 +94,43 @@
     .features {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
+      justify-content: center;
     }
     .feature {
-      flex: 1 1 280px;
-      background: #f8f8f8;
-      padding: 20px;
-      border-radius: 8px;
+      flex: 1 1 300px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
     }
     .feature i {
       color: #ef233c;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: #2b2d42;
+    }
+    .feature ul {
+      padding-left: 20px;
     }
     .contact {
       background: #edf2f4;
-      padding: 40px 20px;
+      padding: 60px 20px;
+    }
+    .contact form input,
+    .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
     blockquote {
       font-style: italic;
@@ -74,23 +138,36 @@
       padding: 20px;
       border-left: 5px solid #ef233c;
       margin-top: 40px;
+      border-radius: 6px;
     }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       background: #2b2d42;
       color: #fff;
+    }
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <header>
+  <nav>
+    <div class="logo">Social Media Solutions</div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header data-animate>
     <h1>Social Media Solutions</h1>
     <p>Helping your business grow online through expert social media management.</p>
     <a href="#contact" class="cta-button">Get in Touch</a>
   </header>
 
-  <section class="section">
+  <section class="section" data-animate>
     <h2>What We Offer</h2>
     <div class="features">
       <div class="feature">
@@ -109,13 +186,12 @@
         <p>We track performance and optimize your presence with data-driven strategies.</p>
       </div>
     </div>
-
     <blockquote>
       “Social Media Solutions transformed our online presence—our engagement has never been better!” – Happy Client
     </blockquote>
   </section>
 
-  <section class="section">
+  <section class="section" id="pricing" data-animate>
     <h2>Our Pricing</h2>
     <div class="features">
       <div class="feature">
@@ -148,7 +224,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" data-animate>
     <h2>Trusted By</h2>
     <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; align-items: center;">
       <img src="https://via.placeholder.com/100x40?text=Client+1" alt="Client 1">
@@ -157,7 +233,7 @@
     </div>
   </section>
 
-  <section class="section" style="text-align: center;">
+  <section class="section" style="text-align: center;" data-animate>
     <h2>Join Our Newsletter</h2>
     <p>Tips, tricks, and the latest social media strategies—straight to your inbox.</p>
     <form action="#" method="post">
@@ -166,7 +242,7 @@
     </form>
   </section>
 
-  <section class="contact" id="contact">
+  <section class="contact" id="contact" data-animate>
     <h2>Contact Us</h2>
     <p>Interested in growing your brand with us? Send us a message and let's talk.</p>
     <form action="#" method="post">
@@ -186,5 +262,21 @@
   <footer>
     <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
