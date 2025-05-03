@@ -1,4 +1,20 @@
-<section class="section" id="pricing" data-animate>
+<style>
+  @keyframes fadeScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .cta-banner-animate {
+    animation: fadeScale 0.8s ease-out forwards;
+  }
+</style>
+
+<section class="section" id="pricing" data-animate style="background: linear-gradient(to right, #fefcea, #f1da36);">
   <h2>Our Pricing</h2>
   <div class="features">
     <div class="feature">
@@ -31,7 +47,7 @@
   </div>
 </section>
 
-<section class="section contact" id="contact" data-animate>
+<section class="section contact" id="contact" data-animate style="background: linear-gradient(to right, #dbeafe, #eff6ff);">
   <h2>Contact Us</h2>
   <p>Interested in growing your brand with us? Send us a message and let's talk.</p>
   <form action="#" method="post">
@@ -48,14 +64,8 @@
   </form>
 </section>
 
-<section class="section" data-animate>
-  <h2>What Our Clients Say</h2>
-  <blockquote>
-    "Social Media Solutions completely transformed our online presence. Engagement is up 300% and we've never been busier. Highly recommend!"<br>
-    — Alex R., Owner of Coffee & Co.
-  </blockquote>
+<section class="section cta-banner-animate" data-animate style="background: linear-gradient(to right, #fca311, #ffb703); text-align: center; color: #fff;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Ready to grow your business online?</h2>
+  <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 20px;">Let’s take your social media to the next level with professional support and proven strategies.</p>
+  <a href="#contact" class="cta-button" style="background-color: #003049; color: #fff; font-size: 1.1rem;">Get Started</a>
 </section>
-
-<footer>
-  <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
-</footer>
