@@ -1,71 +1,210 @@
-<style>
-  @keyframes fadeScale {
-    from {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f4f6f8;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #003049;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: opacity 0.3s ease;
+    }
+    nav a:hover {
+      opacity: 0.7;
+    }
+    .section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .section h2 {
+      font-size: 2.2rem;
+      color: #003049;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .feature {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+      background-image: linear-gradient(145deg, #ffffff, #f1f1f1);
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    .cta-button {
+      display: inline-block;
+      background: #f77f00;
+      color: #fff;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #d62828;
+      transform: scale(1.05);
+    }
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .cta-banner-animate {
+      animation: fadeScale 0.8s ease-out forwards;
+    }
+    [data-animate] {
       opacity: 0;
-      transform: scale(0.95);
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    to {
+    [data-animate].visible {
       opacity: 1;
-      transform: scale(1);
+      transform: none;
     }
-  }
-  .cta-banner-animate {
-    animation: fadeScale 0.8s ease-out forwards;
-  }
-</style>
-
-<section class="section" id="pricing" data-animate style="background: linear-gradient(to right, #fefcea, #f1da36);">
-  <h2>Our Pricing</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>Starter</h3>
-      <p><strong>$299/month</strong> – Great for new businesses.</p>
-      <ul>
-        <li>3 posts/week</li>
-        <li>1 platform</li>
-        <li>Email support</li>
-      </ul>
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Social Media Solutions</div>
+    <div>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div class="feature">
-      <h3>Professional</h3>
-      <p><strong>$499/month</strong> – For growing brands.</p>
-      <ul>
-        <li>5 posts/week</li>
-        <li>2 platforms</li>
-        <li>Strategy session</li>
-      </ul>
+  </nav>
+
+  <section class="section" id="pricing" data-animate style="background: linear-gradient(to right, #fefcea, #f1da36); margin-top: 80px;">
+    <h2>Our Pricing</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Starter</h3>
+        <p><strong>$299/month</strong> – Great for new businesses.</p>
+        <ul>
+          <li>3 posts/week</li>
+          <li>1 platform</li>
+          <li>Email support</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h3>Professional</h3>
+        <p><strong>$499/month</strong> – For growing brands.</p>
+        <ul>
+          <li>5 posts/week</li>
+          <li>2 platforms</li>
+          <li>Strategy session</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h3>Enterprise</h3>
+        <p><strong>Custom pricing</strong> – For large operations.</p>
+        <ul>
+          <li>Daily posts</li>
+          <li>All platforms</li>
+          <li>Dedicated manager</li>
+        </ul>
+      </div>
     </div>
-    <div class="feature">
-      <h3>Enterprise</h3>
-      <p><strong>Custom pricing</strong> – For large operations.</p>
-      <ul>
-        <li>Daily posts</li>
-        <li>All platforms</li>
-        <li>Dedicated manager</li>
-      </ul>
+  </section>
+
+  <section class="section contact" id="contact" data-animate style="background: linear-gradient(to right, #dbeafe, #eff6ff);">
+    <h2>Contact Us</h2>
+    <p>Interested in growing your brand with us? Send us a message and let's talk.</p>
+    <form action="#" method="post">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+  </section>
+
+  <section class="section cta-banner-animate" data-animate style="background: linear-gradient(to right, #fca311, #ffb703); text-align: center; color: #fff;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Ready to grow your business online?</h2>
+    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 20px;">Let’s take your social media to the next level with professional support and proven strategies.</p>
+    <a href="#contact" class="cta-button" style="background-color: #003049; color: #fff; font-size: 1.1rem;">Get Started</a>
+  </section>
+
+  <footer style="text-align: center; padding: 30px 20px; background: linear-gradient(to right, #003049, #1c2541); color: #fff;">
+    <div style="margin-bottom: 10px;">
+      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-linkedin fa-lg"></i></a>
     </div>
-  </div>
-</section>
+    <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
+  </footer>
 
-<section class="section contact" id="contact" data-animate style="background: linear-gradient(to right, #dbeafe, #eff6ff);">
-  <h2>Contact Us</h2>
-  <p>Interested in growing your brand with us? Send us a message and let's talk.</p>
-  <form action="#" method="post">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="position:fixed;bottom:20px;right:20px;background:#f77f00;color:#fff;border:none;padding:10px 15px;border-radius:50%;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+    ↑
+  </button>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
 
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-    <button type="submit" class="cta-button">Send Message</button>
-  </form>
-</section>
-
-<section class="section cta-banner-animate" data-animate style="background: linear-gradient(to right, #fca311, #ffb703); text-align: center; color: #fff;">
-  <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Ready to grow your business online?</h2>
-  <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 20px;">Let’s take your social media to the next level with professional support and proven strategies.</p>
-  <a href="#contact" class="cta-button" style="background-color: #003049; color: #fff; font-size: 1.1rem;">Get Started</a>
-</section>
+    document.querySelectorAll('[data-animate]').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
