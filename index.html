@@ -28,19 +28,36 @@
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     nav .logo {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 800;
     }
     nav a {
       color: #fff;
       text-decoration: none;
       margin-left: 20px;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
+      font-weight: 600;
     }
     nav a:hover {
-      opacity: 0.7;
+      color: #fca311;
+    }
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      padding: 160px 20px 100px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
     .section {
       padding: 80px 20px;
@@ -50,9 +67,9 @@
       z-index: 1;
     }
     .section h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       color: #003049;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       text-align: center;
     }
     .features {
@@ -65,13 +82,19 @@
       flex: 1 1 300px;
       background: #fff;
       padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
       transition: transform 0.3s ease;
-      background-image: linear-gradient(145deg, #ffffff, #f1f1f1);
     }
     .feature:hover {
       transform: translateY(-5px);
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: #003049;
+    }
+    .feature ul {
+      padding-left: 20px;
     }
     .cta-button {
       display: inline-block;
@@ -87,6 +110,15 @@
     .cta-button:hover {
       background: #d62828;
       transform: scale(1.05);
+    }
+    input, textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+      box-sizing: border-box;
     }
     @keyframes fadeScale {
       from {
@@ -110,6 +142,22 @@
       opacity: 1;
       transform: none;
     }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 10px 0 0;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -121,90 +169,8 @@
     </div>
   </nav>
 
-  <section class="section" id="pricing" data-animate style="background: linear-gradient(to right, #fefcea, #f1da36); margin-top: 80px;">
-    <h2>Our Pricing</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Starter</h3>
-        <p><strong>$299/month</strong> – Great for new businesses.</p>
-        <ul>
-          <li>3 posts/week</li>
-          <li>1 platform</li>
-          <li>Email support</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h3>Professional</h3>
-        <p><strong>$499/month</strong> – For growing brands.</p>
-        <ul>
-          <li>5 posts/week</li>
-          <li>2 platforms</li>
-          <li>Strategy session</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h3>Enterprise</h3>
-        <p><strong>Custom pricing</strong> – For large operations.</p>
-        <ul>
-          <li>Daily posts</li>
-          <li>All platforms</li>
-          <li>Dedicated manager</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contact" data-animate style="background: linear-gradient(to right, #dbeafe, #eff6ff);">
-    <h2>Contact Us</h2>
-    <p>Interested in growing your brand with us? Send us a message and let's talk.</p>
-    <form action="#" method="post">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
-
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <button type="submit" class="cta-button">Send Message</button>
-    </form>
-  </section>
-
-  <section class="section cta-banner-animate" data-animate style="background: linear-gradient(to right, #fca311, #ffb703); text-align: center; color: #fff;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Ready to grow your business online?</h2>
-    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 20px;">Let’s take your social media to the next level with professional support and proven strategies.</p>
-    <a href="#contact" class="cta-button" style="background-color: #003049; color: #fff; font-size: 1.1rem;">Get Started</a>
-  </section>
-
-  <footer style="text-align: center; padding: 30px 20px; background: linear-gradient(to right, #003049, #1c2541); color: #fff;">
-    <div style="margin-bottom: 10px;">
-      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook fa-lg"></i></a>
-      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-twitter fa-lg"></i></a>
-      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
-      <a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-linkedin fa-lg"></i></a>
-    </div>
-    <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
-  </footer>
-
-  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="position:fixed;bottom:20px;right:20px;background:#f77f00;color:#fff;border:none;padding:10px 15px;border-radius:50%;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.2);">
-    ↑
-  </button>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    document.querySelectorAll('[data-animate]').forEach(el => {
-      observer.observe(el);
-    });
-  </script>
-</body>
-</html>
+  <header data-animate>
+    <h1>Grow Your Brand with Confidence</h1>
+    <p>Social Media Solutions helps businesses shine online with expert content, strategy, and management.</p>
+    <a href="#contact" class="cta-button">Let's Talk</a>
+  </header>
