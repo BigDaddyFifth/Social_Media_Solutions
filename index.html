@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html {
@@ -11,10 +12,10 @@
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.6;
-      color: #333;
-      background: #fafafa;
+      color: #222;
+      background: #f4f6f8;
     }
     [data-animate] {
       opacity: 0;
@@ -29,7 +30,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: #2b2d42;
+      background: #003049;
       color: #fff;
       padding: 10px 20px;
       display: flex;
@@ -38,8 +39,8 @@
       z-index: 1000;
     }
     nav .logo {
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.3rem;
+      font-weight: 800;
     }
     nav a {
       color: #fff;
@@ -51,44 +52,59 @@
       opacity: 0.7;
     }
     header {
-      background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
-      padding: 140px 20px 100px;
+      padding: 150px 20px 100px;
       text-align: center;
+      clip-path: ellipse(140% 100% at 50% 0%);
     }
     header h1 {
+      font-size: 3.2rem;
       margin-bottom: 10px;
-      font-size: 3rem;
+      font-weight: 800;
     }
     header p {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       max-width: 700px;
       margin: 0 auto;
     }
     .section {
-      padding: 70px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .section h2 {
-      font-size: 2rem;
-      color: #2b2d42;
+      font-size: 2.2rem;
+      color: #003049;
       margin-bottom: 30px;
       text-align: center;
     }
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+      opacity: 0.04;
+      z-index: -1;
+    }
     .cta-button {
       display: inline-block;
-      background: #ef233c;
+      background: #f77f00;
       color: #fff;
       padding: 14px 28px;
       text-decoration: none;
       border-radius: 8px;
       margin-top: 20px;
-      font-weight: bold;
+      font-weight: 600;
       transition: all 0.3s ease;
     }
     .cta-button:hover {
-      background: #d90429;
+      background: #d62828;
       transform: scale(1.05);
     }
     .features {
@@ -99,28 +115,30 @@
     }
     .feature {
       flex: 1 1 300px;
-      background: #ffffff;
+      background: #fff;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
+      background-image: linear-gradient(145deg, #ffffff, #f1f1f1);
     }
     .feature:hover {
       transform: translateY(-5px);
     }
-    .feature i {
-      color: #ef233c;
+    .feature img {
+      width: 100%;
+      border-radius: 12px;
       margin-bottom: 15px;
     }
     .feature h3 {
       margin-top: 0;
-      color: #2b2d42;
+      color: #003049;
     }
     .feature ul {
       padding-left: 20px;
     }
     .contact {
-      background: #edf2f4;
+      background: linear-gradient(to right, #eaeff2, #dee4ea);
       padding: 60px 20px;
     }
     .contact form input,
@@ -131,19 +149,20 @@
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-family: 'Inter', sans-serif;
     }
     blockquote {
       font-style: italic;
-      background: #f0f0f0;
+      background: #fff3cd;
       padding: 20px;
-      border-left: 5px solid #ef233c;
+      border-left: 5px solid #f77f00;
       margin-top: 40px;
       border-radius: 6px;
     }
     footer {
       text-align: center;
       padding: 30px 20px;
-      background: #2b2d42;
+      background: #003049;
       color: #fff;
     }
     footer p {
@@ -156,7 +175,7 @@
     <div class="logo">Social Media Solutions</div>
     <div>
       <a href="#">Home</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -167,96 +186,25 @@
     <a href="#contact" class="cta-button">Get in Touch</a>
   </header>
 
-  <section class="section" data-animate>
-    <h2>What We Offer</h2>
+  <section class="section" id="services" data-animate>
+    <h2>Our Services</h2>
     <div class="features">
       <div class="feature">
-        <i class="fas fa-user-cog fa-2x"></i>
+        <img src="https://source.unsplash.com/400x250/?socialmedia" alt="Social Media Management">
         <h3>Account Management</h3>
         <p>We handle posting, engagement, and audience growth across all platforms.</p>
       </div>
       <div class="feature">
-        <i class="fas fa-pen-nib fa-2x"></i>
+        <img src="https://source.unsplash.com/400x250/?branding" alt="Content Creation">
         <h3>Content Creation</h3>
         <p>Custom content tailored to your brand—images, captions, hashtags, and more.</p>
       </div>
       <div class="feature">
-        <i class="fas fa-chart-line fa-2x"></i>
+        <img src="https://source.unsplash.com/400x250/?analytics,graph" alt="Analytics and Strategy">
         <h3>Analytics & Strategy</h3>
         <p>We track performance and optimize your presence with data-driven strategies.</p>
       </div>
     </div>
-    <blockquote>
-      “Social Media Solutions transformed our online presence—our engagement has never been better!” – Happy Client
-    </blockquote>
-  </section>
-
-  <section class="section" id="pricing" data-animate>
-    <h2>Our Pricing</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Starter</h3>
-        <p>$299/month – Great for new businesses.</p>
-        <ul>
-          <li>3 posts/week</li>
-          <li>1 platform</li>
-          <li>Email support</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h3>Professional</h3>
-        <p>$499/month – For growing brands.</p>
-        <ul>
-          <li>5 posts/week</li>
-          <li>2 platforms</li>
-          <li>Strategy session</li>
-        </ul>
-      </div>
-      <div class="feature">
-        <h3>Enterprise</h3>
-        <p>Custom pricing – For large operations.</p>
-        <ul>
-          <li>Daily posts</li>
-          <li>All platforms</li>
-          <li>Dedicated manager</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" data-animate>
-    <h2>Trusted By</h2>
-    <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; align-items: center;">
-      <img src="https://via.placeholder.com/100x40?text=Client+1" alt="Client 1">
-      <img src="https://via.placeholder.com/100x40?text=Client+2" alt="Client 2">
-      <img src="https://via.placeholder.com/100x40?text=Client+3" alt="Client 3">
-    </div>
-  </section>
-
-  <section class="section" style="text-align: center;" data-animate>
-    <h2>Join Our Newsletter</h2>
-    <p>Tips, tricks, and the latest social media strategies—straight to your inbox.</p>
-    <form action="#" method="post">
-      <input type="email" name="newsletter" placeholder="Enter your email" required>
-      <button type="submit" class="cta-button">Subscribe</button>
-    </form>
-  </section>
-
-  <section class="contact" id="contact" data-animate>
-    <h2>Contact Us</h2>
-    <p>Interested in growing your brand with us? Send us a message and let's talk.</p>
-    <form action="#" method="post">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
-
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <button type="submit" class="cta-button">Send Message</button>
-    </form>
   </section>
 
   <footer>
