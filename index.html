@@ -14,16 +14,16 @@
       margin: 0;
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
-      color: #222;
-      background: #f4f6f8;
+      color: #1f2937;
+      background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
     }
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: #003049;
+      background: #1f2937;
       color: #fff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -31,21 +31,22 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     nav .logo {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 800;
+      color: #fbbf24;
     }
     nav a {
-      color: #fff;
+      color: #e5e7eb;
       text-decoration: none;
       margin-left: 20px;
       transition: all 0.3s ease;
       font-weight: 600;
     }
     nav a:hover {
-      color: #fca311;
+      color: #fbbf24;
     }
     header {
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/header.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header.jpg') center/cover no-repeat;
       color: white;
       padding: 160px 20px 100px;
       text-align: center;
@@ -55,20 +56,23 @@
       margin-bottom: 20px;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       max-width: 700px;
       margin: 0 auto;
     }
     .section {
-      padding: 80px 20px;
+      padding: 100px 20px;
       max-width: 1100px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     }
     .section h2 {
       font-size: 2.5rem;
-      color: #003049;
+      color: #1f2937;
       margin-bottom: 40px;
       text-align: center;
     }
@@ -80,43 +84,45 @@
     }
     .feature {
       flex: 1 1 300px;
-      background: #fff;
+      background: #f9fafb;
       padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
-      transition: transform 0.3s ease;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .feature:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
     }
     .feature h3 {
       margin-top: 0;
-      color: #003049;
+      color: #111827;
     }
     .feature ul {
       padding-left: 20px;
     }
     .cta-button {
       display: inline-block;
-      background: #f77f00;
+      background: #f59e0b;
       color: #fff;
-      padding: 14px 28px;
+      padding: 14px 32px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 20px;
       font-weight: 600;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .cta-button:hover {
-      background: #d62828;
+      background: #d97706;
       transform: scale(1.05);
     }
     input, textarea {
       font-family: 'Inter', sans-serif;
       font-size: 1rem;
-      padding: 10px;
+      padding: 12px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #d1d5db;
       width: 100%;
       box-sizing: border-box;
     }
@@ -171,7 +177,7 @@
   </nav>
 
   <header data-animate>
-    <h1>Grow Your Social Media Presence</h1>
+    <h1>Grow Your Brand with Confidence</h1>
     <p>Social Media Solutions helps businesses shine online with expert content, strategy, and management.</p>
     <a href="#contact" class="cta-button">Let's Talk</a>
   </header>
