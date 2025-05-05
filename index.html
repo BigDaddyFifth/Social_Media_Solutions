@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ data-animate
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html {
+      scroll-padding-top: 120px;
       scroll-behavior: smooth;
     }
     body {
@@ -70,10 +71,10 @@
       border-radius: 16px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     }
-    .section h2 {
-      font-size: 2.5rem;
-      color: #1f2937;
-      margin-bottom: 40px;
+    margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
       text-align: center;
     }
     .features {
@@ -178,12 +179,14 @@
 
   <header data-animate>
     <h1>Grow Your Brand with Confidence</h1>
-    <p>Social Media Solutions helps businesses shine online with expert content, strategy, and management.</p>
+    <div data-animate>
+
+</div>Social Media Solutions helps businesses shine online with expert content, strategy, and management.</p>
     <a href="#contact" class="cta-button">Let's Talk</a>
   </header>
 
 <section class="section" data-animate>
-  <h2>What We Offer</h2>
+  <h2 class="fade-in">What We Offer</h2>
   <div class="features">
     <div class="feature">
       <img src="images/account.jpg"  alt="Account Management" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
@@ -202,7 +205,7 @@
     </div>
   </div>
 <div style="overflow: hidden; line-height: 0;"><svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path fill="#f4f6f8" d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,21.3C840,21,960,43,1080,53.3C1200,64,1320,64,1380,64L1440,64V0H1380C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0H0Z"></path></svg></div>
-<section class="section" data-animate>
+<section class="section" id="contact" data-animate>
   <h2>Contact Us</h2>
   <p style="text-align: center; max-width: 600px; margin: 0 auto 40px;">Have a question or ready to elevate your brand's social media? Reach out and let's make it happen.</p>
   <form action="#" method="post" style="max-width: 600px; margin: 0 auto; display: grid; gap: 20px;">
@@ -226,7 +229,7 @@
 
 
 
-<section class="section" data-animate>
+<section class="section" id="pricing" data-animate>
   <h2>Our Pricing</h2>
   <div class="features">
     <div class="feature">
@@ -250,7 +253,7 @@
       </ul>
     </div>
     <div class="feature">
-      <img src="images/enterprise.jpg" alt="Enterprise Plan" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
+      <img src="images/enterprise.jpg" style="object-position: right center; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
       <h3>Enterprise</h3>
       <p><strong>Custom pricing</strong> – For large organizations with unique needs.</p>
       <ul>
@@ -297,4 +300,8 @@
   document.querySelectorAll('[data-animate]').forEach(el => {
     observer.observe(el);
   });
-</script>
+  document.querySelectorAll('h2.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+
+
