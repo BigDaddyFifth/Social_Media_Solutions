@@ -1,304 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social Media Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-html {
-scroll-behavior: smooth;
-}
-body {
-margin: 0;
-font-family: 'Inter', sans-serif;
-line-height: 1.6;
-color: #1f2937;
-background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
-}
-nav {
-position: fixed;
-top: 0;
-width: 100%;
-background: #1f2937;
-color: #fff;
-padding: 12px 24px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-z-index: 1000;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-nav .logo {
-font-size: 1.5rem;
-font-weight: 800;
-color: #fbbf24;
-}
-nav a {
-color: #e5e7eb;
-text-decoration: none;
-margin-left: 20px;
-transition: all 0.3s ease;
-font-weight: 600;
-}
-nav a:hover {
-color: #fbbf24;
-}
-header {
-background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header.jpg') center/cover no-repeat;
-color: white;
-padding: 160px 20px 100px;
-text-align: center;
-}
-header h1 {
-font-size: 3.5rem;
-margin-bottom: 20px;
-}
-header p {
-font-size: 1.25rem;
-max-width: 700px;
-margin: 0 auto;
-}
-.section {
-padding: 100px 20px;
-max-width: 1100px;
-margin: 0 auto;
-position: relative;
-z-index: 1;
-background: #ffffff;
-border-radius: 16px;
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-.section h2 {
-font-size: 2.5rem;
-color: #1f2937;
-margin-bottom: 40px;
-text-align: center;
-}
-.features {
-display: flex;
-flex-wrap: wrap;
-gap: 30px;
-justify-content: center;
-}
-.feature {
-flex: 1 1 300px;
-background: #f9fafb;
-padding: 30px;
-border-radius: 16px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.feature:hover {
-transform: translateY(-6px);
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-}
-.feature h3 {
-margin-top: 0;
-color: #111827;
-}
-.feature ul {
-padding-left: 20px;
-}
-.cta-button {
-display: inline-block;
-background: #f59e0b;
-color: #fff;
-padding: 14px 32px;
-text-decoration: none;
-border-radius: 10px;
-margin-top: 20px;
-font-weight: 600;
-transition: all 0.3s ease;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.cta-button:hover {
-background: #d97706;
-transform: scale(1.05);
-}
-input, textarea {
-font-family: 'Inter', sans-serif;
-font-size: 1rem;
-padding: 12px;
-border-radius: 8px;
-border: 1px solid #d1d5db;
-width: 100%;
-box-sizing: border-box;
-}
-@keyframes fadeScale {
-from {
-opacity: 0;
-transform: scale(0.95);
-}
-to {
-opacity: 1;
-transform: scale(1);
-}
-}
-.cta-banner-animate {
-animation: fadeScale 0.8s ease-out forwards;
-}
-[data-animate] {
-opacity: 0;
-transform: translateY(20px);
-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-[data-animate].visible {
-opacity: 1;
-transform: none;
-}
-@media (max-width: 768px) {
-header h1 {
-font-size: 2.5rem;
-}
-nav {
-flex-direction: column;
-align-items: flex-start;
-}
-nav a {
-margin: 10px 0 0;
-}
-.features {
-flex-direction: column;
-align-items: center;
-}
-}
-</style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-padding-top: 120px;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1f2937;
+      color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fbbf24;
+    }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #fbbf24;
+    }
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header.jpg') center/cover no-repeat;
+      color: white;
+      padding: 160px 20px 100px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+    .section h2 {
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      text-align: center;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .feature {
+      flex: 1 1 300px;
+      background: #f9fafb;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    }
+    .feature h3 {
+      margin-top: 0;
+      color: #111827;
+    }
+    .feature ul {
+      padding-left: 20px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #f59e0b;
+      color: #fff;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .cta-button:hover {
+      background: #d97706;
+      transform: scale(1.05);
+    }
+    input, textarea {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .cta-banner-animate {
+      animation: fadeScale 0.8s ease-out forwards;
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 10px 0 0;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-<main>
-<nav>
-<div class="logo">Social Media Solutions</div>
-<div>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<header data-animate>
-<h1>Grow Your Brand with Confidence</h1>
-<p>Social Media Solutions helps businesses shine online with expert content, strategy, and management.</p>
-<a href="#contact" class="cta-button">Let's Talk</a>
-</header>
-
-<section class="section" data-animate>
-<h2>What We Offer</h2>
-<div class="features">
-<div class="feature">
-      <img src="images/account.jpg"  alt="Account Management" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-      <img src="images/account.jpg"  alt="Account Management" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-<h3>Account Management</h3>
-<p>We manage your online presence so you can focus on your business.</p>
-</div>
-<div class="feature">
-      <img src="images/content.jpg" width="800" height="500" alt="Content Creation" style="width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-      <img src="images/content.jpg"  alt="Content Creation" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-<h3>Content Creation</h3>
-<p>Custom content designed to engage your target audience effectively.</p>
-</div>
-<div class="feature">
-      <img src="images/strategy.jpg" width="800" height="500" alt="Strategy & Analytics" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-      <img src="images/strategy.jpg"  alt="Strategy & Analytics" style="width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-<h3>Strategy & Analytics</h3>
-<p>Data-driven decisions based on detailed performance insights.</p>
-</div>
-</div>
-<div style="overflow: hidden; line-height: 0;"><svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg"><path fill="#f4f6f8" d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,21.3C840,21,960,43,1080,53.3C1200,64,1320,64,1380,64L1440,64V0H1380C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0H0Z"></path></svg></div>
-<section class="section" data-animate>
-<h2>Contact Us</h2>
-<p style="text-align: center; max-width: 600px; margin: 0 auto 40px;">Have a question or ready to elevate your brand's social media? Reach out and let's make it happen.</p>
-<form action="#" method="post" style="max-width: 600px; margin: 0 auto; display: grid; gap: 20px;">
-<div style="display: flex; align-items: center; gap: 10px;">
-<i class="fas fa-user"></i>
-<input type="text" name="name" placeholder="Your Name" required>
-</div>
-<div style="display: flex; align-items: center; gap: 10px;">
-<i class="fas fa-envelope"></i>
-<input type="email" name="email" placeholder="Your Email" required>
-</div>
-<div style="display: flex; align-items: start; gap: 10px;">
-<i class="fas fa-comment"></i>
-<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-</div>
-<div style="text-align: center;">
-<button type="submit" class="cta-button">Send Message</button>
-</div>
-</form>
-</section>
-
-
-
-<section class="section" data-animate>
-<h2>Our Pricing</h2>
-<div class="features">
-<div class="feature">
-      <img src="images/starter.jpg" width="800" height="500" alt="Starter Plan" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-      <img src="images/starter.jpg" width="800" height="500" alt="Starter Plan" style="width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; margin-bottom: 15px;">
-<h3>Starter</h3>
-<p><strong>$299/month</strong> – Ideal for new businesses just starting out.</p>
-<ul>
-<li>3 posts/week</li>
-<li>1 social platform</li>
-<li>Email support</li>
-</ul>
-</div>
-<div class="feature">
-<img src="images/professional.jpg" width="800" height="500" alt="Professional Plan" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-<h3>Professional</h3>
-<p><strong>$499/month</strong> – Perfect for brands ready to scale.</p>
-<ul>
-<li>5 posts/week</li>
-<li>2 platforms</li>
-<li>Strategy sessions</li>
-</ul>
-</div>
-<div class="feature">
-<img src="images/enterprise.jpg" width="800" height="500" alt="Enterprise Plan" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
-<h3>Enterprise</h3>
-<p><strong>Custom pricing</strong> – For large organizations with unique needs.</p>
-<ul>
-<li>Daily posting</li>
-<li>All major platforms</li>
-<li>Dedicated social manager</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section class="section" data-animate style="background: linear-gradient(to right, #fca311, #ffb703); text-align: center; color: #fff;">
-<h2 style="font-size: 2.5rem; margin-bottom: 10px;">Ready to grow your business online?</h2>
-<p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto 20px;">Let’s take your social media to the next level with professional support and proven strategies.</p>
-<a href="#contact" class="cta-button" style="background-color: #003049; color: #fff; font-size: 1.1rem;">Get Started</a>
-</section>
-
-<footer style="text-align: center; padding: 30px 20px; background: linear-gradient(to right, #003049, #1c2541); color: #fff;">
-<div style="margin-bottom: 10px;">
-<a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook fa-lg"></i></a>
-<a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-twitter fa-lg"></i></a>
-<a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram fa-lg"></i></a>
-<a href="#" style="color: #fff; margin: 0 10px;"><i class="fab fa-linkedin fa-lg"></i></a>
-</div>
-<p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
-</footer>
-</main>
-
-<button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="position:fixed;bottom:20px;right:20px;background:#f77f00;color:#fff;border:none;padding:10px 15px;border-radius:50%;cursor:pointer;box-shadow:0 4px 8px rgba(0,0,0,0.2);">
-↑
-</button>
-
-<script>
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-}
-});
-}, {
-threshold: 0.1
-});
-
-document.querySelectorAll('[data-animate]').forEach(el => {
-observer.observe(el);
-});
-</script>
+<!-- full body content will continue below this line -->
