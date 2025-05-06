@@ -167,7 +167,47 @@
         align-items: center;
       }
     }
-  </style>
+      section[data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section[data-animate].visible {
+      opacity: 1;
+      transform: none;
+    }
+    .feature {
+      position: relative;
+      overflow: hidden;
+    }
+    .feature::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.05));
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .feature:hover::before {
+      opacity: 0.2;
+    }
+    .feature h3 {
+      font-size: 1.4rem;
+      color: #1d4ed8;
+      margin-bottom: 10px;
+    }
+    .feature ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+    .feature ul li::before {
+      content: "✔";
+      color: #10b981;
+      position: absolute;
+      left: 0;
+    }
+</style>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -175,6 +215,7 @@
     <div class="logo">Social Media Solutions</div>
     <div>
       <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
@@ -185,10 +226,11 @@
     <p>We manage your social media so you can focus on your business.</p>
   </header>
 
-  <section id="services" class="section">
+  <section id="services" class="section" data-animate>
     <h2>Our Services</h2>
     <div class="features">
       <div class="feature">
+        <img src="images/content.jpg" alt="Content creation" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
         <h3>Content Creation</h3>
         <ul>
           <li>Custom graphics & posts</li>
@@ -197,6 +239,7 @@
         </ul>
       </div>
       <div class="feature">
+        <img src="images/account.jpg" alt="Account management" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
         <h3>Account Management</h3>
         <ul>
           <li>Daily posting</li>
@@ -205,6 +248,7 @@
         </ul>
       </div>
       <div class="feature">
+        <img src="images/growth.jpg" alt="Growth strategy" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
         <h3>Growth Strategy</h3>
         <ul>
           <li>Hashtag research</li>
@@ -215,12 +259,46 @@
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="pricing" class="section" data-animate>
+    <h2>Pricing Plans</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Starter</h3>
+        <ul>
+          <li>Up to 5 posts/week</li>
+          <li>1 platform</li>
+          <li>Email support</li>
+        </ul>
+        <p><strong>$199/month</strong></p>
+      </div>
+      <div class="feature">
+        <h3>Professional</h3>
+        <ul>
+          <li>Daily posts</li>
+          <li>Up to 3 platforms</li>
+          <li>Priority support</li>
+        </ul>
+        <p><strong>$399/month</strong></p>
+      </div>
+      <div class="feature">
+        <h3>Enterprise</h3>
+        <ul>
+          <li>Custom strategy</li>
+          <li>All platforms</li>
+          <li>Dedicated manager</li>
+        </ul>
+        <p><strong>Contact us</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section" data-animate>
+    <img src="images/team.jpg" alt="Our team" style="width: 100%; border-radius: 12px; margin-bottom: 20px;">
     <h2>About Us</h2>
     <p>Social Media Solutions is a team of creative marketers and designers focused on helping small businesses thrive online through impactful digital presence.</p>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section" data-animate>
     <h2>Contact Us</h2>
     <form>
       <label for="name">Name</label>
@@ -239,5 +317,18 @@
   <footer class="section" style="text-align: center; font-size: 0.9rem;">
     <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
   </footer>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
