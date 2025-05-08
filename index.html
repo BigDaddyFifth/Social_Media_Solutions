@@ -7,18 +7,17 @@
   <title>Social Media Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
     html {
       scroll-padding-top: 120px;
       scroll-behavior: smooth;
     }
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #1f2937;
-      background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
-    }
+  
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+}
     nav {
   position: fixed;
   top: 0;
@@ -66,15 +65,9 @@
       margin: 0 auto;
     }
     .section {
-      padding: 100px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    }
+  
+  transition: background 0.3s ease;
+}
     .section h2 {
       margin-bottom: 40px;
       opacity: 0;
@@ -204,12 +197,7 @@
       padding-left: 20px;
       margin-bottom: 8px;
     }
-    .feature ul li::before {
-      content: "✔";
-      color: #10b981;
-      position: absolute;
-      left: 0;
-    }
+    
 </style>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -219,7 +207,7 @@
     <div>
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
+      <a href="#our-team">Our Team</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -265,7 +253,7 @@
     </div>
   </section>
 
-  <section id="pricing" class="section" data-animate>
+  <section id="pricing" class="section" data-animate style="background-color: #f3f4f6;">
   <div style="text-align: center; margin-bottom: 30px;">
     <h1 style="font-size: 3rem; font-weight: 800; color: #1f2937;">Pricing</h1>
   </div>
@@ -304,18 +292,18 @@
     </div>
   </section>
 
-  <section id="about" class="section" data-animate>
+  <section id="our-team" class="section" data-animate style="background-color: #fff7ed;">
   <div style="text-align: center; margin-bottom: 30px;">
-    <h1 style="font-size: 3rem; font-weight: 800; color: #1f2937;">About</h1>
+    <h1 style="font-size: 3rem; font-weight: 800; color: #1f2937;">Our Team</h1>
   </div>
         <div class="features" style="justify-content: center;">
       <div class="feature" style="text-align: center;">
-        <img src="images/john.JPG" alt="John" style="width: 70%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
+        <img src="images/john.JPG" alt="John" style="width: 70%; height: 360px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
         <h3>John</h3>
 <p>Co-founder & Creative Director</p>
       </div>
       <div class="feature" style="text-align: center;">
-        <img src="images/osmar.jpg" alt="Osmar" style="width: 70%; height: 320px; object-fit: cover; border-radius: 12px; margin-bottom: 10px;">
+        <img src="images/osmar.jpg" alt="Osmar" style="width: 70%; height: 360px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;">
         <h3>Osmar</h3>
 <p>Co-founder & Strategy Lead</p>
       </div>
@@ -347,6 +335,11 @@
   <footer class="section" style="text-align: center; font-size: 0.9rem;">
     <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
   </footer>
+<section class="section" style="background: #1f2937; color: white; text-align: center; padding: 60px 20px;">
+  <h2 style="font-size: 2.5rem; font-family: 'Playfair Display', serif; margin-bottom: 20px;">Let’s Work Together</h2>
+  <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">Reach out today and let’s build your brand’s future on social media.</p>
+  <a href="#contact" class="cta-button" style="background: #fbbf24; color: #1f2937;">Get Started</a>
+</section>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
