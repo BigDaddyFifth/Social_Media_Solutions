@@ -320,13 +320,15 @@
 </div>
     <h2 style="font-size: 2.5rem; font-weight: 800; color: #1f2937; margin-bottom: 20px; font-family: 'Playfair Display', serif;">We’d Love to Hear From You</h2>
     <p>We're excited to hear from you. Let us know how we can help your business grow.</p>
-    <form style="max-width: 700px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+    <form action="https://formsubmit.co/johnallistonv@gmail.com" method="POST" onsubmit="return validateForm()" style="max-width: 700px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 24px; align-items: center;">
   <div style="display: flex; gap: 20px; width: 100%;">
     <input type="text" id="name" name="name" placeholder="Your Name" style="flex: 1; padding: 16px; border-radius: 12px; border: 1px solid #d1d5db;">
     <input type="email" id="email" name="email" placeholder="Your Email" style="flex: 1; padding: 16px; border-radius: 12px; border: 1px solid #d1d5db;">
   </div>
   <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." style="width: 100%; padding: 16px; border-radius: 12px; border: 1px solid #d1d5db;"></textarea>
   <button type="submit" class="cta-button" style="background: #1f2937; color: #fff; font-weight: 700; padding: 14px 36px; border-radius: 12px;">Send Message</button>
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="thank-you.html">
 </form>
   </section>
 
@@ -351,5 +353,18 @@
 
     document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
   </script>
+<script>
+function validateForm() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill out all fields before submitting.");
+    return false;
+  }
+  return true;
+}
+</script>
 </body>
 </html>
