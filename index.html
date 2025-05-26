@@ -213,11 +213,15 @@
     
 </style>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
+<script src="https://unpkg.com/alpinejs" defer></script>
+
 <body class="bg-zinc-50 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 scroll-smooth font-inter">
-  <nav class="fixed top-0 w-full bg-gray-900 text-white px-6 py-4 flex flex-wrap justify-between items-center z-50 shadow-md">
+  <nav x-data="{ open: false }" class="fixed top-0 w-full bg-gray-900 text-white px-6 py-4 flex flex-wrap justify-between items-center z-50 shadow-md">
   <div class="text-xl font-extrabold text-yellow-400">Social Media Solutions</div>
-  <div class="flex gap-5 mt-2 sm:mt-0">
+  <button @click="open = !open" class="sm:hidden text-yellow-400">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div :class="open ? 'flex' : 'hidden sm:flex'" class="flex-col sm:flex-row sm:flex gap-5 mt-2 sm:mt-0">
     <a href="#services" class="hover:text-yellow-400 font-semibold transition">Services</a>
     <a href="#pricing" class="hover:text-yellow-400 font-semibold transition">Pricing</a>
     <a href="#our-team" class="hover:text-yellow-400 font-semibold transition">Our Team</a>
@@ -237,7 +241,7 @@
   <div class="text-center mb-12">
     <h1 class="text-4xl font-extrabold text-gray-800">Services</h1>
   </div>
-  <div class="flex flex-wrap justify-center gap-8 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
     <div class="bg-white shadow-lg rounded-xl p-6 w-full max-w-sm transform transition hover:-translate-y-1 hover:shadow-xl">
       <img src="images/content.jpg" alt="Content creation" class="w-full rounded-lg mb-4">
       <h3 class="text-xl font-semibold text-blue-700 mb-2">Content Creation</h3>
@@ -268,12 +272,12 @@
   </div>
 </section>
 
-  <section id="pricing" class="py-24 bg-white" data-animate>
+  <section id="pricing" class="py-24 bg-white border-t border-zinc-200" data-animate>
   <div class="text-center mb-12">
     <h1 class="text-4xl font-extrabold text-gray-800">Pricing</h1>
     <p class="text-gray-600 mt-2">Choose the plan that fits your business needs</p>
   </div>
-  <div class="flex flex-wrap justify-center gap-8 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto">
     <div class="bg-white shadow-xl rounded-xl p-6 max-w-sm w-full text-center">
       <img src="images/starter.jpg" alt="Starter plan" class="w-full rounded-lg mb-4">
       <h3 class="text-xl font-bold text-indigo-600 mb-2 flex items-center justify-center gap-2"><i class="fas fa-seedling"></i> Starter</h3>
@@ -344,7 +348,7 @@
   </form>
 </section>
 
-  <footer class="text-center py-10 text-sm text-zinc-500">
+  <footer class="text-center py-10 text-sm text-zinc-500 border-t border-zinc-200">
     <p>&copy; 2025 Social Media Solutions. All rights reserved.</p>
   </footer>
 <section class="section py-24 bg-cover bg-center text-white text-center relative overflow-hidden" style="background-image: url('images/banner-bg.jpg');">
