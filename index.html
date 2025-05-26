@@ -315,13 +315,20 @@
   <div class="text-center mb-12 bg-black bg-opacity-60 py-6 px-4 rounded-xl inline-block">
     <h1 class="text-4xl font-extrabold text-white">Our Team</h1>
   </div>
-  <div class="flex flex-wrap justify-center gap-10 px-6">
-    <div class="bg-white text-gray-800 rounded-2xl shadow-xl p-6 max-w-sm w-full text-center transform transition-transform duration-300 hover:scale-105">
-      <img src="images/john.JPG" alt="John Alliston V" class="w-48 h-48 object-cover rounded-full mx-auto mb-4">
-      <h3 class="text-xl font-bold mb-1">John Alliston V</h3>
-      <p class="text-sm font-medium text-gray-600 mb-2">Co-founder & Creative Director</p>
-      <p class="text-sm">John leads our creative strategy, combining a passion for design with a sharp eye for social trends to craft compelling brand narratives.</p>
-    </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 max-w-6xl mx-auto">
+  <div class="bg-white bg-opacity-90 backdrop-blur-sm text-gray-800 rounded-2xl shadow-lg p-8 w-full text-center transform transition-transform duration-300 hover:scale-105">
+    <img src="images/john.JPG" alt="John Alliston V" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-md">
+    <h3 class="text-xl font-bold mb-1">John Alliston V</h3>
+    <p class="text-sm font-medium text-gray-600 mb-2">Co-founder & Creative Director</p>
+    <p class="text-sm">John leads our creative strategy, combining a passion for design with a sharp eye for social trends to craft compelling brand narratives.</p>
+  </div>
+  <div class="bg-white bg-opacity-90 backdrop-blur-sm text-gray-800 rounded-2xl shadow-lg p-8 w-full text-center transform transition-transform duration-300 hover:scale-105">
+    <img src="images/osmar.jpg" alt="Osmar Perez Jr" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 shadow-md">
+    <h3 class="text-xl font-bold mb-1">Osmar Perez Jr</h3>
+    <p class="text-sm font-medium text-gray-600 mb-2">Co-founder & Strategy Lead</p>
+    <p class="text-sm">Osmar drives the strategic vision, ensuring each campaign delivers measurable results and aligns with client goals.</p>
+  </div>
+</div>
     <div class="bg-white text-gray-800 rounded-2xl shadow-xl p-6 max-w-sm w-full text-center">
       <img src="images/osmar.jpg" alt="Osmar Perez Jr" class="w-48 h-48 object-cover rounded-full mx-auto mb-4">
       <h3 class="text-xl font-bold mb-1">Osmar Perez Jr</h3>
@@ -359,14 +366,15 @@
   <script>
     const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    const el = entry.target;
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    } else {
-      entry.target.classList.remove('visible');
+      el.classList.add('visible');
+    } else if (entry.boundingClientRect.top > 0) {
+      el.classList.remove('visible');
     }
   });
 }, {
-  threshold: 0.1
+  threshold: 0.3
 });
 
     document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
